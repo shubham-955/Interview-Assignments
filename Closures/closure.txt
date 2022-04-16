@@ -1,4 +1,5 @@
-Q-1.  
+Q-1. Create a function called toggler using closures?
+Ans = The answer for this question is in Toggler folder
 
 Q-2. What are IIFE?
 Ans = 
