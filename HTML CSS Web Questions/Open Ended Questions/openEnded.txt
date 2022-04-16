@@ -1,0 +1,51 @@
+1. What are some new things happening in the web?
+Ans - 
+Responsiveness - 
+   - The new website patterns follows responsiveness to look good in various 
+   devices.
+Redux - 
+   - Using redux toolkit to make data accessible from one place to anywhere.
+React - 
+   - Virtual DOM in react allows to change the component only and not the whole page to reload again and again.
+
+
+2. Explain a project that you have built?
+Ans - 
+- My recent project is clone of Make My Trip.
+- This project is done by 4 team members including me.
+- We have used React, Redux, Material UI for frontend and Node JS, Express for backend.
+- We have used MongoDB as a database and twilio as a middleware to send otp for respective mobile numbers.   
+
+
+3. Whats something exciting that you have built?
+Ans - 
+- First thing is excited in our project is use of twilio to send otp's for user mobile numbers which is very functional.
+- Second thing is use of JWT for the various users with which we can differentiate the users data for the 
+particular user who is signed in.
+
+
+4. What are you most excited about?
+Ans - 
+- I'm excited about a full stack project which will have the different authentications and has a 
+multifunctional features including web socket so that user can have chat with others or support.
+- One more thing is the design aspects that the website will look awesome in various devices.
+
+
+5. Why do coding standards matter? What are some patterns you follow?
+Ans - 
+- Coding standards includes making the dynamic components which will be used multiple times.
+- I follow this standard in every project by making different dynamic components.
+- I follow commenting the description lines to make it more clear.
+- I used to describe the important and main css design in root so that we can use this anywhere (for eg. colors, margins)
+
+
+6. How do you go about managing responsive websites?
+Ans - 
+- I used to take width as 100% for container and other insights and use padding more than hardcoded width.
+- Using different media queries to change the css design where the design breaks.
+
+
+7. What do you care about the most when you write software?
+Ans - 
+- First I care about the responsiveness of the entire website so that it will look good in all devices.
+- Important thing is writing the code in shortest and simplest way so that it will not take more loading time.
