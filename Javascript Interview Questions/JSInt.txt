@@ -1,0 +1,159 @@
+Q-1. What is hoisting?
+Ans = 
+1. In JavaScript, a variable can be declared after it has been used.
+2. For eg. 
+   A) 
+   x = 10; // Assign 10 to x
+   elem = document.getElementById("demo"); // Find an element
+   elem.innerHTML = x;                     // Display x in the element
+   var x; // Declare x
+   B) 
+   var x; // Declare x
+   x = 5; // Assign 5 to x
+   elem = document.getElementById("demo"); // Find an element
+   elem.innerHTML = x;                     // Display x in the element
+3. In above both the examples, we can see the declaration of variables is in different order.
+4. But for the both cases, it will print same output.
+
+Q-2. What is scoping?
+Ans = 
+1. Scope in JavaScript refers to the current context of code, which determines the accessibility of variables to 
+   JavaScript. 
+2. The two types of scope are local and global: Global variables are those declared outside of a block. 
+3. Local variables are those declared inside of a block.
+
+Q-3. How are var, let const different?
+1. In the scoping concept, the brief of let, const and var variable is taken place.
+2. When we declare the variable with var, we can access that value to anywhere.
+3. If we set the another value for same variable with var the updated value will take place.
+4. By using let keyword for any variable, we can access the value in that particular function.
+5. In case we have to access the value outside the function it will consider as undefined.
+6. In case of const, we have to set the value for that variable, otherwise it will gives syntax error.
+7. And for const we can not set new value for the same variable.
+
+Q-4. What are the two main differences in arrow functions?
+Ans = 
+1. Unlike regular functions, arrow functions do not have their own this. 
+2. The value of this inside an arrow function remains the same throughout the lifecycle of the function and is 
+   always bound to the value of this in the closest non-arrow parent function.
+
+Q-5. Does Call apply bind work for arrow functions?
+Ans = 
+1. The call, apply and bind methods are NOT suitable as arrow functions because 
+   A. They were designed to allow methods to execute within different scopes 
+   B. Arrow functions establish this based on the scope the arrow function is defined within.
+
+Q-6. What does call apply bind do?
+Ans = The bind method creates a copy of the function and sets the this keyword, while the call and apply methods 
+      sets the this keyword and calls the function immediately.
+For eg.
+    function demo(S1, S2){
+       console.log(this.name);
+       console.log(S1);
+       console.log(S2);
+    }      
+    demo(); // undefined
+
+    demo.call({ name:"Shubham" } "Pratik", "Abhishek"); 
+    // Shubham
+    // Pratik
+    // Abhishek
+
+    demo.apply({ name:"Shubham" }, ["Pratik", "Abhishek"]); 
+    // Shubham
+    // Pratik
+    // Abhishek
+
+- In the above examples, if we don't declare variable and access it using this keyword, it will consider this for
+  window and if does not find that variable, it will output as undefined.
+- In case of call and apply, just syntax is different.      
+
+Q-7. What are closures?
+Ans = 
+1. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+   (the lexical environment). 
+2. In other words, a closure gives you access to an outer function's scope from an inner function. 
+3. For eg.
+    function init() {
+       var name = 'Mozilla'; // name is a local variable created by init
+       function displayName() { // displayName() is the inner function, a closure
+       alert(name); // use variable declared in the parent function
+       } 
+       displayName();
+    }
+    init(); // Mozilla
+4. For above eg. we can access the parent value in the inner function because of closure.    
+
+Q-8. Write a program to debounce a search bar?
+Ans = The ans for debounce is in the debounce folder  
+
+Q-9. Write a program to throttle a search bar?
+Ans = The ans for throttle is in the throttle folder
+
+Q-10. What is event bubbling?
+Ans = 
+1. Event bubbling directs an event to its intended target, and works like this: 
+   When an object (like a button) is clicked, an event is directed to the object. 
+2. If an event handler is set for the object, the event handler is triggered. 
+3. Then the event bubbles up (like a bubble in water) to the objects parent.
+
+Q-11. What is event loop?
+Ans = 
+1. JavaScript has a runtime model based on an event loop, which is responsible for executing the code, 
+   collecting and processing events, and executing queued sub-tasks. 
+2. This model is quite different from models in other languages like C and Java.
+
+Q-12. what does async await mean?
+Ans = 
+1. In computer programming, the async/await pattern is a syntactic feature of many programming languages that 
+   allows an asynchronous, non-blocking function to be structured in a way similar to an ordinary synchronous 
+   function. 
+2. It is semantically related to the concept of a coroutine and is often implemented using similar techniques, 
+   and is primarily intended to provide opportunities for the program to execute other code while waiting for a 
+   long-running, asynchronous task to complete, usually represented by promises or similar data structures.
+
+Q-13. What does the this keyword mean?
+Ans = 
+1. “This” keyword refers to an object that is executing the current piece of code. 
+2. It references the object that is executing the current function. 
+3. If the function being referenced is a regular function, “this” references the global object.
+
+Q-14. What are classes? what are getters and setters?
+Ans = 
+1. Classes are a template for creating objects. They encapsulate data with code to work on that data.
+2. Getters and setters are used to protect your data, particularly when creating classes. 
+3. For each instance variable, a getter method returns its value while a setter method sets or updates its value. 
+4. Given this, getters and setters are also known as accessors and mutators, respectively.
+
+Q-15. How do you declare private and static variables in classes?
+Ans = 
+1. Class variables, commonly known as static variables, are defined using the static keyword in a class but 
+   outside a method, constructor (default or parameterized), or block. 
+2. Private static variables are frequently utilized for constants.
+
+Q-16. What is currying?
+Ans = 
+1. Currying is a technique of evaluating function with multiple arguments, into sequence of functions with single 
+   argument.
+2. In other words, when a function, instead of taking all arguments at one time, takes the first one and return a 
+   new function that takes the second one and returns a new function which takes the third one, and so forth, 
+   until all arguments have been fulfilled.
+3. Uses of currying function
+   A. It helps to avoid passing same variable again and again.
+   B. It is extremely useful in event handling. 
+4. For eg.
+        function Myfunction(a) {
+            return (b) => {
+                return (c) => {
+                    return a * b * c
+                }
+            }
+        }
+
+        Myfunction(1, 2, 3); // 6
+
+Q-17. Write a program to flatten an array?
+Ans = 
+const input = [1, [2, 3], [3], [[[5]], 6]];
+const output = input.flat(3);
+console.log(output)
