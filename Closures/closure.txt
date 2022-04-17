@@ -53,4 +53,5 @@ Ans =
             </ul>
         );
     };
-3. In the above example, We are passing the list item data to handleClick, this is nothing but currying.    
+3. In the above example, We are passing the list item data to handleClick, this is nothing but currying.
+    
