@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.15;
+    background-color: #2e3035;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Container {
+    background-image: url("https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png");
+    background-size: cover;
+}
+
+.Navbar {
+    top: 0px;
+    position: sticky;
+    z-index: 1000;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Navbar-left {
+    min-width: 360px;
+    position: relative;
+    display: inline-flex;
+}
+
+.Navbar-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.Navbar-logo {
+    display: inline;
+    cursor: pointer;
+}
+
+.upload {
+    min-width: auto;
+    margin: auto 20px;
+    position: relative;
+}
+
+.Button {
+    text-align: center;
+    display: inline-block;
+    padding: 7px 14px 10px 9px;
+    text-transform: none;
+    user-select: none;
+    touch-action: manipulation;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 700;
+    width: auto;
+    background-color: #1bb76e;
+    box-shadow: 0 6px 10px 0 rgb(27 28 30 / 31%);
+    color: #fff;
+    white-space: nowrap;
+}
+
+.Button img {
+    padding: 0;
+    font-size: inherit;
+    position: inherit;
+    display: inline-block;
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+.Navbar-center {
+    max-width: 550px;
+    margin: auto;
+    align-items: center;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.Searchbar {
+    position: relative;
+    float: right;
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.Searchbar-form {
+    width: 100%;
+}
+
+.Searchbar-form input {
+    background: hsla(0, 0%, 100%, 0.25);
+    border: 1px solid transparent;
+    padding: 0px 0px 0px 8px;
+    border-radius: 3px;
+    width: 100%;
+    outline: 0 none;
+    opacity: 0.8;
+    min-height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #fff;
+    text-shadow: inherit;
+    -webkit-text-fill-color: inherit;
+}
+
+.Searchbar button {
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    outline: 0 none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.Navbar-right {
+    position: relative;
+    display: inline-flex;
+    min-width: 260px;
+    justify-content: flex-end;
+}
+
+.Profile {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.AdFree {
+    background: #6432f9;
+    box-shadow: 0 3px 4px rgb(0 0 0 / 12%);
+    padding: 0 10px 0 9px;
+    overflow: hidden;
+    margin: auto 0;
+    line-height: 35px;
+    margin-left: 20px;
+}
+
+.NavbarNotifications {
+    display: inline-flex;
+    margin: auto 10px;
+}
+
+.NavbarNotifications>* {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.ProfileNavbar-item {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+}
+
+.Dropdown-title {
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: right;
+    color: #babec4;
+    cursor: pointer;
+}
+
+.NavbarUserMenu {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    float: right;
+    min-width: 50px;
+    min-height: 40px;
+    align-items: center;
+}
+
+.NavbarAvatar {
+    height: 37px;
+    width: 37px;
+    margin-right: 0;
+    vertical-align: middle;
+    margin-left: 0;
+    display: inline-block;
+}
+
+.UserAvatar {
+    border-radius: 50%;
+    background: grey;
+    background-size: cover;
+}
+
+.Dropdown-title span:first-child {
+    margin-right: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.Message {
+    font-size: 24px;
+    letter-spacing: 0.6px;
+    color: #aed8ea;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 34px;
+    position: relative;
+    font-weight: bolder;
+}
+
+.TrendingTags {
+    margin: 0 auto;
+}
+
+.TrendingTags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TrendingTags-header {
+    height: 31px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.7;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.3px;
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.TrendingTags-label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.TrendingTags-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.TrendingTags .Tag {
+    margin: 6px 6px 0;
+}
+
+.Tag {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 3px;
+    background-color: rgba(121, 67, 200, 0.8);
+    background-size: auto 115px;
+    background-repeat: repeat-x;
+    background-position: 100% 0;
+}
+
+.Tag-title {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.Tag-name {
+    font-size: 14px;
+    line-height: 1.15;
+    letter-spacing: 0.4px;
+    color: #fff;
+    text-transform: capitalize;
+    word-break: break-word;
+}
+
+.Tag-posts {
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.46;
+    letter-spacing: 0.4px;
+    color: hsla(0, 0%, 100%, 0.5);
+}
+
+.imgur-img {
+    height: 35px;
+    width: 35px;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+#Image-grid {
+    margin-top: 350px;
+    width: 1264px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
