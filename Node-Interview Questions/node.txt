@@ -1,0 +1,195 @@
+Q-1. Explain in brief what is node js?
+Ans = 
+1. Node.js is an free open source server environment which uses JavaScript on the server.
+2. Node js can do - 
+   A. Node.js can generate dynamic page content
+   B. Node.js can create, open, read, write, delete, and close files on the server
+   C. Node.js can collect form data
+   D. Node.js can add, delete, modify data in your database
+
+Q-2. How is node js non blocking?
+Ans = 
+1. The event loop is what allows Node js to perform non-blocking I/O operations despite the fact 
+   that JavaScript is single-threaded. 
+2. The loop, which runs on the same thread as the JavaScript code, grabs a task from the code and 
+   executes it.
+
+Q-3. What is throughput?
+Ans = In data transmission, network throughput is the amount of data moved successfully from one place to another 
+      in a given time period, and typically measured in bits per second (bps), as in megabits per second (Mbps) 
+      or gigabits per second (Gbps).
+
+Q-4. How is Node js having high IO throughput?
+Ans =
+1. If the processor has to regularly wait for data to arrive, the task is said to be I/O intensive. 
+2. Node. js's asynchronous nature however makes it really good at I/O intensive tasks, as it can keep doing 
+   other work while it waits for the data to arrive asynchronously.
+3. Node. js is asynchronous and single-threaded. 
+4. This means that all I/O operations don't block any other operations. 
+5. It also means that you can send emails, read files, query the database, etc.
+
+Q-5. What are CPU intensive tasks?
+Ans = 
+1. They are complex user actions that eat up more RAM. 
+2. A few of such processes can shut down your server entirely. 
+3. Naturally, you want to make sure that your app or website is 'smart' enough to handle different kinds of tasks, 
+   for each individual user request.
+4. Example: Sorting, search, graph traversal, matrix multiply are all CPU operations, a process is CPU-intensive 
+   or not it depends on how much and how frequent are their execution.
+
+Q-6. How can you end up blocking your main thread in node.js?
+Ans = 
+1. The Main Thread is where the browser does most of the work needed to display a page. 
+2. If we keep the Main Thread blocked, it can't perform its crucial tasks. 
+3. This leads to slow load times, unresponsive pages, and a bad user experience.
+
+Q-7. What is an event loop?
+Ans = 
+1. In computer science, the event loop is a programming construct or design pattern that waits for and dispatches 
+   events or messages in a program. 
+2. The event loop works by making a request to some internal or external "event provider", then calls the relevant 
+   event handler.
+
+Q-8. What are different phases in event loop?
+Ans = All the phases of event loop include: 
+        1. Poll
+        2. Check
+        3. Close callbacks
+        4. timers
+        5. Pending callbacks
+        6. idle, prepare
+
+    1. The poll phase:
+        - The poll phase handles all of the input/output operations we execute.
+        - All the synchronous JavaScript code you write will be executed in the poll phase of the event loop
+
+Q-9. What is process.tick?
+Ans = 
+1. Every time the event loop takes a full trip, we call it a tick. 
+2. When we pass a function to process.nextTick() , we instruct the engine to invoke this function at the end of 
+   the current operation, before the next event loop tick starts
+
+Q-10. When can process.tick starve your event loop?
+Ans = 
+1. The code executed with the process.nextTick is the asynchronous code that we will get immediately after the 
+   code in the current call stack is executed.
+2. Executing long-running codes in the nextTickQueue can starve the execution of different phases of the event 
+   loop’s iteration.
+
+Q-11. What is the difference between setTimeout and setInterval?
+Ans = 
+1. The only difference is , setTimeout() triggers the expression only once while setInterval() keeps triggering 
+   expression regularly after the given interval of time. (unless you tell it to stop).
+2. To stop further calls, we should call clearInterval(timerId).
+
+Q-12. How can you make a network request with http module from the backend?
+Ans = 
+1. First, we require the https standard Node module, which is available with Node.js installation. 
+2. No need for a package.json file or any npm install --save to get this running.
+3. We then call our JSONPlaceholder URL with the get method, which has a callback that provides the response 
+   we have put in the res variable.
+
+Q-13. How can you create your own events?
+Ans = The below steps are followed in order to create one using a new Event.
+        1. We create an event using the Event constructor.
+        2. We listen to this event using the addEventListener() method.
+        3. We trigger or dispatch the event using element. dispatchEvent(eventName) method.
+        4. A custom Event named start has now been created.
+
+Q-14. What is a cluster?
+Ans = 
+1. A computer cluster is a set of computers that work together so that they can be viewed as a single system. 
+2. Unlike grid computers, computer clusters have each node set to perform the same task, controlled and scheduled 
+   by software. 
+
+Q-15. How does your Node.js application handle scale? Elaborate
+Ans = 
+1. Scalability in Node.js is not an afterthought. It’s something that’s baked into the core of the runtime. 
+2. Node is named Node to emphasize the idea that a Node application should comprise multiple small distributed 
+   nodes that communicate with each other.
+3. Node’s cluster module not only provides an out-of-the-box solution to utilizing the full CPU power of a 
+   machine, but it also helps with increasing the availability of your Node processes and provides an option to 
+   restart the whole application with a zero downtime.
+        1 — Cloning
+        * The easiest thing to do to scale a big application is to clone it multiple times and have each cloned 
+          instance handle part of the workload (with a load balancer, for example). 
+        * This does not cost a lot in term of development time and it’s highly effective. 
+        * This strategy is the minimum you should do and Node.js has the built-in module, cluster, to make it 
+          easier for you to implement the cloning strategy on a single server.
+
+        2 — Decomposing
+        * We can also scale an application by decomposing it based on functionalities and services. 
+        * This means having multiple, different applications with different code bases and sometimes with their 
+          own dedicated databases and User Interfaces.
+        * This strategy is commonly associated with the term Microservice, where micro indicates that those 
+          services should be as small as possible, but in reality, the size of the service is not what’s important 
+          but rather the enforcement of loose coupling and high cohesion between services. 
+        * The implementation of this strategy is often not easy and could result in long-term unexpected problems, 
+          but when done right the advantages are great.
+
+        3 — Splitting
+        * We can also split the application into multiple instances where each instance is responsible for only a 
+          part of the application’s data. 
+        * This strategy is often named horizontal partitioning, or sharding, in databases. Data partitioning 
+          requires a lookup step before each operation to determine which instance of the application to use. 
+        * For example, maybe we want to partition our users based on their country or language. We need to do a 
+          lookup of that information first.
+
+Q-16. What is the difference between readFile and readFileSync?
+Ans = 
+1. In fs. readFile() method, we can read a file in a non-blocking asynchronous way, but in fs. readFileSync() 
+   method, we can read files in a synchronous way, i.e. we are telling node.js to block other parallel process 
+   and do the current file reading process.
+
+Q-17. What are CORS? How do you configure them? Why do you need them?
+Ans = Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any 
+      origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+
+Q-18. What is rate limiting?
+Ans = In computer networks, rate limiting is used to control the rate of requests sent or received by a network 
+      interface controller. 
+
+Q-19. How does middlewares work in express?
+Ans = 
+1. Middleware functions are functions that have access to the request object ( req ), the response object 
+   ( res ), and the next function in the application's request-response cycle. 
+2. The next function is a function in the Express router which, when invoked, executes the middleware succeeding 
+   the current middleware.
+
+Q-20. What is the difference between Encryption and Hashing?
+Ans = 
+1. Since encryption is two-way, the data can be decrypted so it is readable again. 
+2. Hashing, on the other hand, is one-way, meaning the plaintext is scrambled into a unique digest, through the 
+   use of a salt, that cannot be decrypted.
+
+Q-21. What is the difference between https and http?
+Ans = 
+1. HTTPS is HTTP with encryption. 
+2. The only difference between the two protocols is that HTTPS uses TLS (SSL) to encrypt normal HTTP requests 
+   and responses. 
+3. As a result, HTTPS is far more secure than HTTP. 
+4. A website that uses HTTP has http:// in its URL, while a website that uses HTTPS has https://.
+
+Q-22. What is TLS?
+Ans = Transport Layer Security, the successor of the now-deprecated Secure Sockets Layer, is a cryptographic 
+      protocol designed to provide communications security over a computer network.
+
+Q-23. What is AES?
+Ans = 
+1. The Advanced Encryption Standard, also known by its original name Rijndael, is a specification for the 
+   encryption of electronic data established by the U.S. National Institute of Standards and Technology in 2001.
+2. The AES engine encrypts the plain text (source data) into cipher text (encrypted data) and sends it to the 
+   NAND flash for storage. 
+3. Inversely, if the host wants to retrieve data from the storage device, the AES engine decrypts the cipher 
+   text in the NAND flash, and then transmits data to the host as plain text.
+
+Q-24. What is salting? Where do we store salt?
+Ans = 
+1. A salt is added to the hashing process to force their uniqueness, increase their complexity without increasing 
+   user requirements, and to mitigate password attacks like hash tables
+2. In practice, we store the salt in cleartext along with the hash in our database.
+
+Q-25. What is the difference between Authorisation and Authentication?
+Ans = Simply put, authentication is the process of verifying who someone is, whereas authorization is the process 
+      of verifying what specific applications, files, and data a user has access to.
+   
